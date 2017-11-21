@@ -15,6 +15,7 @@ from me_api.cache import cache
 middlewares = {
     'douban': 'me_api.middleware.douban:douban_api',
     'github': 'me_api.middleware.github:github_api',
+    'gitlab': 'me_api.middleware.gitlab:gitlab_api',
     'instagram': 'me_api.middleware.instagram:instagram_api',
     'keybase': 'me_api.middleware.keybase:keybase_api',
     'medium': 'me_api.middleware.medium:medium_api',

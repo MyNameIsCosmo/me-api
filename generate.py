@@ -32,6 +32,15 @@ TEMPLATE = {
             "me": "Input the username(e.g. lord63): "
         }
     },
+    "gitlab": {
+        "path": "Input the path(e.g. /gitlab): ",
+        "data": {
+            "me": "Input the username(e.g. mynameiscosmo): ",
+            "url": "Input the URL of your GitLab setup (i.e. http://gitlab.example.com): ",
+            "api_version": "Input the API version of GitLab (leave blank for default, v4): ",
+            "access_token": "Input the 'Access Token' of GitLab: "
+        }
+    },
     "instagram": {
         "path": "Input the path(e.g. /photos): ",
         "data": {
@@ -76,10 +85,9 @@ TEMPLATE = {
 def config_module(module):
     """Config module from user input."""
     default_conf = TEMPLATE[module]
-    default_conf['path'] = path.join('/',
-                                     get_input(default_conf['path']).strip())
+    default_conf['path'] = path.join('/', get_input(default_conf['path']).strip())
     for key, value in default_conf['data'].items():
-        if key == 'access_token': continue
+        #if key == 'access_token': continue
         default_conf['data'][key] = get_input(value).strip()
     return default_conf
 
